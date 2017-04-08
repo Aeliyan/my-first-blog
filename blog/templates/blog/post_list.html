@@ -6,17 +6,12 @@
         <div>
             <h1><a href="">Le blog de Marion</a></h1>
         </div>
-
+        {% for post in posts %}
         <div>
-            <p>publié le : 14.06.2014, 12:14</p>
-            <h2><a href="">Mon premier article</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p>publié le : {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>publié le : 14.06.2014, 12:14</p>
-            <h2><a href="">Mon deuxième article</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        {% endfor %}
     </body>
 </html>
